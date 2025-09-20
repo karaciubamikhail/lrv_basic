@@ -11,15 +11,14 @@ class GroupController extends Controller
      * Display a listing of the resource.
      */
 
-    public function index()
-    {
-        $allGroups = Group::all();
-        foreach ($allGroups as $group) {
-                return view('group.index', [
-                    'group' => $allGroups,
-                ]);
-        };
-    }
+public function index()
+{
+    $allGroups = Group::all();
+
+    return view('group.index', [
+        'groups' => $allGroups,
+    ]);
+}
 
     /**
      * Show the form for creating a new resource.
